@@ -398,13 +398,13 @@ button:hover {
   .card {
     width: 90%; /* Reduzido para tornar os cards menores */
     padding: 15px; /* Ajustado para um padding menor */
-    margin: 10px 0; /* Adicionando margens entre os cards */
+    margin: 5px 0; /* Adicionando margens entre os cards */
     box-sizing: border-box;
   }
 
   #login-card {
     width: 90%; /* Ajustado para manter o card de login proporcional */
-    padding: 30px 20px; /* Menos padding */
+    padding: 20px 20px; /* Menos padding */
   }
 
   input,
@@ -418,7 +418,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 10px; /* Espaçamento entre os itens */
+    margin-bottom: 5px; /* Espaçamento entre os itens */
   }
 
   #file-list button {
