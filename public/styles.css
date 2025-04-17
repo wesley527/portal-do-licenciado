@@ -339,7 +339,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Centraliza verticalmente */
     padding: 20px 10px;
   }
 
@@ -369,10 +369,12 @@ button:hover {
     box-sizing: border-box;
   }
 
+  /* Aqui está o card de login ajustado só para celular */
   #login-card {
     width: 90%;
     max-width: 320px;
     padding: 30px 20px;
+    margin: 0 auto;
   }
 
   input,
