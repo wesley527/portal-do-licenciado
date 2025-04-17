@@ -281,20 +281,6 @@ button:hover {
   font-weight: 600;
 }
 
-.history-container {
-  margin-top: 20px;
-  text-align: left;
-}
-
-.history-container ul {
-  list-style: disc;
-  padding-left: 20px;
-  max-height: 200px;
-  overflow-y: auto;
-  color: #eee;
-  font-size: 0.95rem;
-}
-
 #login-card {
   background: rgba(15, 15, 45, 0.85);
   padding: 60px 40px;

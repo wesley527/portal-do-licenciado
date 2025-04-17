@@ -1,5 +1,3 @@
-// script.js atualizado
-
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('login-form');
   const uploadForm = document.getElementById('upload-form');
@@ -9,22 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginCard = document.getElementById('login-card');
   const portal = document.getElementById('portal');
   const registerContainer = document.querySelector('.register-container');
-  const registerSuccess = document.getElementById('register-success');
-  const historyContainer = document.querySelector('.history-container');
 
   let currentUser = null;
-  let historyLog = [];
-
-  function addToHistory(action) {
-    historyLog.push(action);
-    if (currentUser?.role === 'moderador') {
-      historyContainer.style.display = 'block';
-      historyContainer.innerHTML = `
-        <h3>Histórico de atividades</h3>
-        <ul>${historyLog.map(h => `<li>${h}</li>`).join('')}</ul>
-      `;
-    }
-  }
 
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -49,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
           registerContainer.style.display = 'block';
         }
 
-        addToHistory(`Login realizado por ${username}`);
         loadFiles();
       } else {
         alert('Usuário ou senha inválidos.');
@@ -70,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (res.ok) {
       alert('Arquivo enviado com sucesso!');
-      addToHistory(`${currentUser.username} enviou um arquivo.`);
       uploadForm.reset();
       loadFiles();
     } else {
@@ -101,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
           if (confirmDelete) {
             const delRes = await fetch(`/delete/${filename}`, { method: 'DELETE' });
             if (delRes.ok) {
-              addToHistory(`${currentUser.username} excluiu o arquivo "${filename}"`);
               loadFiles();
             } else {
               alert('Erro ao excluir o arquivo.');
@@ -127,14 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const data = await res.json();
       if (data.success) {
-        registerSuccess.textContent = `Usuário ${newUser} cadastrado com sucesso!`;
+        document.getElementById('register-success').textContent = `Usuário ${newUser} cadastrado com sucesso!`;
         registerForm.reset();
-        addToHistory(`Usuário ${newUser} (${newRole}) cadastrado.`);
       } else {
-        registerSuccess.textContent = data.message || 'Erro ao cadastrar usuário.';
+        document.getElementById('register-success').textContent = data.message || 'Erro ao cadastrar usuário.';
       }
     } catch (err) {
-      registerSuccess.textContent = 'Erro ao cadastrar usuário.';
+      document.getElementById('register-success').textContent = 'Erro ao cadastrar usuário.';
     }
   });
 });
