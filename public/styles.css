@@ -373,27 +373,22 @@ button:hover {
     align-items: center;
     justify-content: flex-start;
     padding: 20px 10px;
-    width: 100%;
-    text-align: center;
   }
 
   .container {
     padding: 10px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .titulo {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Reduzido para responsividade */
     margin-bottom: 20px;
     padding: 0 10px;
-    text-align: center;
-    width: 100%;
+    text-align: center; /* Centraliza o título */
   }
 
   .card-wrapper {
+    display: flex; /* Garantir que os cards se alinhem corretamente */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -401,29 +396,29 @@ button:hover {
   }
 
   .card {
-    width: 95%;
-    max-width: 400px;
-    padding: 20px;
-    margin: 10px auto;
-    text-align: left;
+    width: 90%; /* Reduzido para tornar os cards menores */
+    padding: 15px; /* Ajustado para um padding menor */
+    margin: 10px 0; /* Adicionando margens entre os cards */
+    box-sizing: border-box;
   }
 
   #login-card {
-    width: 95%;
-    max-width: 420px;
-    padding: 40px 20px;
-    margin: 0 auto;
+    width: 90%; /* Ajustado para manter o card de login proporcional */
+    padding: 30px 20px; /* Menos padding */
   }
 
   input,
   select,
   button {
     font-size: 1rem;
+    padding: 10px; /* Garantir que os inputs e botões sejam responsivos */
   }
 
   #file-list li {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 10px; /* Espaçamento entre os itens */
   }
 
   #file-list button {
